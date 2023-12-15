@@ -1,10 +1,19 @@
+## Table des Matières
+- [English description](#english)
+  - [Key Features](#key-features)
+  - [Configuring the Application](#configuring-the-application-english)
+- [Description en français](#français)
+  - [Caractéristiques Principales](#caractéristiques-principales)
+  - [Configuration de l'Application](#configuration-de-lapplication-français)
+- [Preview](#preview)
+
 ### English
 
 **MyBiblio - Your Personal Digital Library Assistant**
 
 Welcome to MyBiblio, the intuitive and user-friendly application designed to revolutionize the way you manage your personal book, comic book, and manga collection. Our aim is to simplify your reading experience by providing a seamless way to keep track of your home library, preventing the purchase of duplicate books and helping you discover new releases.
 
-**Key Features:**
+#### Key Features
 
 - **Collection Management:** Easily add and organize your books, comics, and mangas with detailed information and custom categories.
 - **New Releases Tracker:** Stay updated with the latest releases in your favorite genres. Never miss out on new publications.
@@ -42,7 +51,7 @@ To ensure the smooth running of MyBiblio, you need to set up a `config.js` file 
 
 Bienvenue sur MyBiblio, l'application intuitive et facile à utiliser, conçue pour révolutionner la façon dont vous gérez votre collection personnelle de livres, de bandes dessinées et de mangas. Notre objectif est de simplifier votre expérience de lecture en fournissant un moyen efficace de suivre votre bibliothèque personnelle, évitant ainsi l'achat de doublons et vous aidant à découvrir de nouvelles parutions.
 
-**Caractéristiques Principales:**
+#### Caractéristiques Principales
 
 - **Gestion de Collection :** Ajoutez et organisez facilement vos livres, bandes dessinées et mangas avec des informations détaillées et des catégories personnalisées.
 - **Suivi des Nouveautés :** Restez à jour avec les dernières sorties dans vos genres préférés. Ne manquez jamais une nouvelle publication.
@@ -73,7 +82,7 @@ Pour assurer le bon fonctionnement de MyBiblio, vous devez configurer un fichier
    Remplacez `"VOTRE_CLE_API_GOOGLE_BOOKS"` par votre véritable clé API Google Books.
 
 
-### Preview :
+### Preview
 
 ![Capture d'écran de l'application](assets/screenshot1.png)
 ![Capture d'écran de l'application](assets/screenshot2.png)
