@@ -21,45 +21,9 @@ const SearchScreen = ({ navigation }) => {
   const searchBooks = () => {
     const filteredBooks = booksData.filter(
       (book) =>
-        book.titre.toLowerCase().includes(searchQuery.toLowerCase()) ||
         book.auteur.toLowerCase().includes(searchQuery.toLowerCase())
     );
     setResults(filteredBooks);
-  };
-
-  const onBookPress = (book) => {
-    navigation.navigate("BookDetails", { book });
-  };
-
-  return (
-    <View style={styles.container}>
-      <TextInput
-        style={styles.input}
-        value={searchQuery}
-        onChangeText={setSearchQuery}
-        placeholder="Rechercher des livres...."
-        placeholderTextColor="#666"
-      />
-      <Button 
-        mode="contained"
-        onPress={searchBooks}
-        style={styles.searchButton}
-      >
-        Rechercher
-      </Button>
-      <FlatList
-        data={results}
-        keyExtractor={(item, index) => item.ean + index.toString()}
-        renderItem={({ item }) => (
-          <BookCard
-            title={item.titre}
-            authors={item.auteur}
-            imageUrl={item.image_url}
-            onPress={() => onBookPress(item)}
-          />
-        )}
-        numColumns={numColumns}
-      />
     </View>
   );
 };
