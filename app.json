@@ -1,19 +1,17 @@
 {
   "expo": {
-    "name": "MyBiblio2",
-    "slug": "MyBiblio2",
-    "version": "1.0.0",
+    "name": "MyBiblio",
+    "slug": "MyBiblio",
+    "version": "0.2.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/logo.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
