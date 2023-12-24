@@ -4,7 +4,11 @@
     "slug": "MyBiblio",
     "version": "0.2.0",
     "orientation": "portrait",
+<<<<<<< HEAD
+    "icon": "./assets/logo.png",
+=======
     "icon": "./assets/icon.png",
+>>>>>>> a215e212b01792e35ed8ba06360aaf1d50c0d0a7
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",

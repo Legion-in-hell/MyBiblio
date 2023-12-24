@@ -34,3 +34,12 @@ yarn-error.*
 
 #config and API
 config.js
+<<<<<<< HEAD
+
+# misc
+book_data.json
+books_data.json
+
+
+=======
+>>>>>>> a215e212b01792e35ed8ba06360aaf1d50c0d0a7
