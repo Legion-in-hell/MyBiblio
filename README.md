@@ -39,3 +39,10 @@ Bienvenue sur MyBiblio, l'application intuitive et facile à utiliser, conçue p
 - **Accessibilité Multiplateforme :** Utilisez MyBiblio sur les appareils iOS et Android.
 
 Que vous soyez un lecteur occasionnel ou un bibliophile dévoué, MyBiblio est le compagnon idéal pour votre parcours littéraire.
+
+### Preview
+
+![Screenshot](./assets/preview1.png)
+![Screenshot](./assets/preview2.png)
+![Screenshot](./assets/preview3.png)
+![Screenshot](./assets/preview4.png)
