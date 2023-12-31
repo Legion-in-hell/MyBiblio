@@ -1,5 +1,5 @@
 import React from "react";
-import { TouchableOpacity } from "react-native";
+import { StyleSheet } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -17,13 +17,18 @@ const NouveautéStack = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
+        style={styles.navBottom}
         name="NouveautéScreen"
         component={NewReleasesScreen}
         options={{
           header: () => <CustomHeader title="My Biblio" />,
         }}
       />
-    <Stack.Screen name="BookDetails" component={BookDetailsScreen} />
+    <Stack.Screen
+      name="BookDetails"
+      component={BookDetailsScreen}
+      options={({ route }) => ({ title: route.params.book.titre })}
+    />
     </Stack.Navigator>
   );
 };
@@ -31,6 +36,7 @@ const CollectionStack = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
+        style={styles.navBottom}
         name="CollectionScreen"
         component={CollectionScreen}
         options={{
@@ -45,13 +51,18 @@ const RechercheStack = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
+        style={styles.navBottom}
         name="RechercheScreen"
         component={SearchScreen}
         options={{
           header: () => <CustomHeader title="My Biblio" />,
         }}
       />
-      <Stack.Screen name="BookDetails" component={BookDetailsScreen} />
+      <Stack.Screen
+        name="BookDetails"
+        component={BookDetailsScreen}
+        options={({ route }) => ({ title: route.params.book.titre })}
+      />
     </Stack.Navigator>
   );
 };
@@ -60,6 +71,7 @@ const CompteStack = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
+        style={styles.navBottom}
         name="CompteScreen"
         component={AccountScreen}
         options={{
@@ -73,7 +85,7 @@ const CompteStack = () => {
 const AppNavigator = () => {
   return (
     <Tab.Navigator
-      screenOptions={({ route }) => ({
+        screenOptions={({ route }) => ({
         headerShown: false,
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
@@ -104,5 +116,13 @@ const AppNavigator = () => {
     </Tab.Navigator>
   );
 };
+
+const styles = StyleSheet.create({
+
+  navBottom: {
+    marginTop: 30,
+  },
+
+})
 
 export default AppNavigator;

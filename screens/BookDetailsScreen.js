@@ -9,21 +9,23 @@ const BookDetailsScreen = ({ route }) => {
     <ScrollView style={styles.container}>
       <Image source={{ uri: book.image_url }} style={styles.image} />
       <View style={styles.btnContainer}>
-      <Button mode="contained" style={styles.btn1}>+ collection</Button>
-      <Button mode="contained" style={styles.btn2}>+ liste d'achat</Button>
+        <Button mode="contained" style={styles.btn1}>+ collection</Button>
+        <Button mode="contained" style={styles.btn2}>+ liste d'achat</Button>
       </View>
       <View style={styles.bottomDetail}>
-      <Text style={styles.title}>{book.titre}</Text>
-      <Text style={styles.author}>{book.auteur}</Text>
-      <Text style={styles.description}>{book.description}</Text>
-      <Text>EAN: {book.ean}</Text>
-      <Text>Nombre de pages: {book.nb_pages}</Text>
-      <Text>
-        Dimensions: {book.dimensions}
-      </Text>
-      <Text>
-        Date de parution: {book.date_parution} </Text>
-      <View style={{ marginBottom: 40 }} />
+        <Text style={styles.title}>{book.titre}</Text>
+        <Text style={styles.author}>{book.auteur}</Text>
+        <Text style={styles.description}>{book.description}</Text>
+        <Text><Text style={{fontWeight: 'bold'}}>Prix:</Text> {book.prix}</Text>
+        <Text><Text style={{fontWeight: 'bold'}}>EAN:</Text> {book.isbn}</Text>
+        <Text>
+          <Text style={{fontWeight: 'bold'}}>Date de parution: </Text>{book.date_parution}
+        </Text>
+        <Text><Text style={{fontWeight: 'bold'}}>Nombre de pages:</Text> {book.nb_pages}</Text>
+        <Text><Text style={{fontWeight: 'bold'}}>Dimensions: </Text>{book.dimensions}</Text>
+        <Text><Text style={{fontWeight: 'bold'}}>Poids:</Text> {book.poids}</Text>
+
+        <View style={{ marginBottom: 40 }} />
       </View>
     </ScrollView>
   );

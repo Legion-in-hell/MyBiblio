@@ -1,17 +1,7 @@
 import React, { useState } from "react";
-import { View, TextInput, FlatList, Text, StyleSheet, Image, TouchableOpacity, Dimensions } from "react-native";
-import { Button } from 'react-native-paper';
+import { View, TextInput, FlatList, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { Button, Searchbar } from 'react-native-paper';
 import booksData from '../book_data.json';
-
-const numColumns = 2;
-
-const BookCard = ({ title, authors, imageUrl, onPress }) => (
-  <TouchableOpacity style={styles.card} onPress={onPress}>
-    {imageUrl && <Image source={{ uri: imageUrl }} style={styles.image} />}
-    <Text style={styles.title}>{title}</Text>
-    <Text style={styles.author}>{authors}</Text>
-  </TouchableOpacity>
-);
 
 const SearchScreen = ({ navigation }) => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -26,45 +16,83 @@ const SearchScreen = ({ navigation }) => {
     setResults(filteredBooks);
   };
 
-  const onBookPress = (book) => {
-    navigation.navigate("BookDetails", { book });
-  };
+const renderBook = ({ item }) => (
+  <TouchableOpacity 
+    style={styles.bookContainer} 
+    onPress={() => navigation.navigate('BookDetails', { book: item })}
+  >
+    <Image source={{ uri: item.image_url }} style={styles.image} />
+    <View style={styles.textContainer}>
+      <Text style={styles.title}>{item.titre}</Text>
+      <Text style={styles.author}>{item.auteur}</Text>
+    </View>
+  </TouchableOpacity>
+);
 
   return (
     <View style={styles.container}>
-      <TextInput
-        style={styles.input}
-        value={searchQuery}
+      <Searchbar
+        placeholder="Rechercher"
         onChangeText={setSearchQuery}
-        placeholder="Rechercher des livres...."
-        placeholderTextColor="#666"
+        value={searchQuery}
+        style={styles.searchbar}
       />
-      <Button 
+      <Button
         mode="contained"
         onPress={searchBooks}
-        style={styles.searchButton}
+        style={styles.button}
       >
         Rechercher
       </Button>
       <FlatList
         data={results}
-        keyExtractor={(item, index) => item.ean + index.toString()}
-        renderItem={({ item }) => (
-          <BookCard
-            title={item.titre}
-            authors={item.auteur}
-            imageUrl={item.image_url}
-            onPress={() => onBookPress(item)}
-          />
-        )}
-        numColumns={numColumns}
+        renderItem={renderBook}
+        keyExtractor={item => item.ean}
       />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  // ... styles...
+  container: {
+    flex: 1,
+    padding: 10,
+    backgroundColor: '#f5f5f5',
+  },
+  searchbar: {
+    marginBottom: 10,
+  },
+  searchButton: {
+    marginBottom: 10,
+    color: 'blue',
+  },
+  input: {
+    marginBottom: 10,
+  },
+  bookContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    padding: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: '#ddd',
+    alignItems: 'center',
+  },
+  textContainer: {
+    flex: 1,
+  },
+  image: {
+    width: 50,
+    height: 75,
+    resizeMode: 'contain',
+    marginRight: 10,
+  },
+  title: {
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  author: {
+    fontSize: 14,
+  },
 });
 
 export default SearchScreen;

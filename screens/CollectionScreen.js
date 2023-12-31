@@ -4,11 +4,9 @@ import { View, Text, StyleSheet, FlatList, TouchableOpacity, Image } from "react
 const CollectionScreen = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [books, setBooks] = useState([
-    // Add your books here. Each book should be an object with a 'category' and 'image' property.
-    // For example: { title: 'Book 1', category: 'Roman', image: 'https://example.com/book1.jpg' }
   ]);
 
-  const categories = ['Roman', 'Manga', 'Policier', 'Bande dessinée', 'Autres']; // Add your categories here
+  const categories = ['Roman', 'Manga', 'Policier', 'Bande dessinée', 'Autres'];
 
   const booksByCategory = categories.map(category => ({
     category,
