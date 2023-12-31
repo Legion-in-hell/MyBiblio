@@ -44,7 +44,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#f5f5f5",
     borderRadius: 10,
     alignItems: "center",
-    
   },
   categoryTitle: {
     fontSize: 18,

@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, Image, StyleSheet, SafeAreaView } from "react-native";
 
 const CustomHeader = ({ title }) => {
+  
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, FlatList, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
-import booksData from '../books_data.json';
+import booksData from '../book_data.json';
 
 const NewReleasesScreen = ({ navigation }) => {
   const [index, setIndex] = useState(0);
@@ -14,7 +14,6 @@ const NewReleasesScreen = ({ navigation }) => {
   const [aParaitre, setAParaitre] = useState([]);
 
   useEffect(() => {
-    
 
     const today = new Date();
     const sortedBooks = [...booksData].sort((a, b) => {

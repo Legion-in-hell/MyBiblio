@@ -6,7 +6,6 @@ import { ActivityIndicator } from "react-native";
 
 const App = () => {
   const [fontsLoaded, setFontsLoaded] = useState(false);
-
   useEffect(() => {
     async function loadFonts() {
       await Font.loadAsync({

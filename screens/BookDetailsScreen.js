@@ -67,7 +67,6 @@ const styles = StyleSheet.create({
     backgroundColor: "blue",
     width: "48%",
   },
-  
   ean: {
     fontSize: 16,
     marginVertical: 10,

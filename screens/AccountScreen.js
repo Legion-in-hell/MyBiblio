@@ -13,7 +13,6 @@ const AccountScreen = () => {
         <Text style={styles.name}>John Doe</Text>
         <Text style={styles.email}>john.doe@example.com</Text>
       </View>
-
       <View style={styles.buttonSection}>
         <Button icon="cog-outline" mode="outlined" onPress={() => console.log("Settings Pressed")} style={styles.button}>
           Settings
