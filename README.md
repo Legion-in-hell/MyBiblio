@@ -42,7 +42,5 @@ Que vous soyez un lecteur occasionnel ou un bibliophile dévoué, MyBiblio est l
 
 ### Preview
 
-![Screenshot](./assets/preview1.png)
-![Screenshot](./assets/preview2.png)
-![Screenshot](./assets/preview3.png)
-![Screenshot](./assets/preview4.png)
+|<img src= "./assets/preview1.png" width="25%">|<img src= "./assets/preview3.png" width="25%">|<img src= "./assets/preview4.png" width="25%">|
+|<img src= "./assets/preview4.png" width="25%">|<img src= "./assets/preview5.png" width="25%">|<img src= "./assets/preview6.png" width="25%">|
