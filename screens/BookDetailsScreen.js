@@ -54,6 +54,7 @@ const styles = StyleSheet.create({
   description: {
     fontSize: 16,
     marginVertical: 10,
+    marginBottom: 30,
   },
 
   btnContainer: {
@@ -62,11 +63,11 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   btn1: {
-    backgroundColor: "red",
+    backgroundColor: "rgba(250, 0, 0, 0.7)",
     width: "48%",
   },
   btn2: {
-    backgroundColor: "blue",
+    backgroundColor: 'rgba(0, 150, 255, 0.9)',
     width: "48%",
   },
   ean: {

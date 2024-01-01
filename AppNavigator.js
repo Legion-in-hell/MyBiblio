@@ -105,10 +105,10 @@ const AppNavigator = () => {
           }
           return <Ionicons name={iconName} size={size} color={color} />;
         },
-        tabBarActiveTintColor: "blue",
+        tabBarActiveTintColor: 'rgba(0, 150, 255, 0.9)',
         tabBarInactiveTintColor: "gray",
       })}
-    >
+    > 
       <Tab.Screen name="Nouveauté" component={NouveautéStack} />
       <Tab.Screen name="Collection" component={CollectionStack} />
       <Tab.Screen name="Recherche" component={RechercheStack} />

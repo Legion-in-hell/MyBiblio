@@ -20,7 +20,7 @@ const AccountScreen = () => {
         <Button icon="tune" mode="outlined" onPress={() => console.log("Preferences Pressed")} style={styles.button}>
           Preferences
         </Button>
-        <Button icon="lifebuoy" mode="outlined" onPress={() => console.log("Help & Support Pressed")} style={styles.button}>
+        <Button icon="lifebuoy" mode="outlined" color="#149FFE" onPress={() => console.log("Help & Support Pressed")} style={styles.button}>
           Help & Support
         </Button>
         <Button icon="logout" mode="contained" color="red" onPress={() => console.log("Logout Pressed")} style={styles.logoutButton}>
@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
   },
   button: {
     marginVertical: 5,
+    color: 'red',
   },
   logoutButton: {
     marginTop: 5,

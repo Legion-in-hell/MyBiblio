@@ -64,7 +64,6 @@ const styles = StyleSheet.create({
   },
   searchButton: {
     marginBottom: 10,
-    color: 'blue',
   },
   input: {
     marginBottom: 10,
@@ -92,6 +91,10 @@ const styles = StyleSheet.create({
   },
   author: {
     fontSize: 14,
+  },
+  button: {
+    marginBottom: 10,
+    backgroundColor: 'rgba(0, 150, 255, 0.9)',
   },
 });
 

@@ -114,12 +114,11 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
   },
   tabIndicator: {
-    backgroundColor: 'blue',
-    height: 3,
+    // i want blue color with 50% opacity
+    backgroundColor: 'rgba(0, 150, 255, 0.9)',
+    height: '100%',
     borderRadius: 25,
-    width: '40%',
-    marginLeft: '5%',
-    marginRight: '-5%',
+    width: '50%',
   },
   tabLabel: {
     color: 'black',
