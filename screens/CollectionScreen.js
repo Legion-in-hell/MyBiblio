@@ -1,19 +1,18 @@
-import React, { useState } from "react";
-import { View, Text, StyleSheet, FlatList, TouchableOpacity, Image, Button } from "react-native";
+import React, { useState, useEffect } from "react";
+import { View, Text, StyleSheet, FlatList, TouchableOpacity, Image } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import book_data from '../book_data.json';
+
 const CollectionScreen = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [books, setBooks] = useState([]);
   const [wishlist, setWishlist] = useState([]);
+  const [isScannerOpen, setScannerOpen] = useState(false);
 
   const categories = ['Roman', 'Manga', 'Policier', 'Bande dessinée', 'Autres'];
 
-  const booksByCategory = categories.map(category => ({
-    category,
-    books: [...books.filter(book => book.category === category), ...wishlist.filter(book => book.category === category)],
-  }));
 
-  const totalBooks = books.reduce((total, book) => total + 1, 0);
+  const totalBooks = books.length;
 
   const handleScanBook = () => {
     // Logic for scanning a book
@@ -23,18 +22,33 @@ const CollectionScreen = () => {
     // Logic for sharing the collection
   };
 
+  const onBarCodeScanned = ({ type, data }) => {
+    setScannerOpen(false);
+    const book = book_data.find(book => book.ean === data);
+    if (book) {
+      setBooks(prevBooks => [...prevBooks, book]);
+    } else {
+      alert('Book not found');
+    }
+  };
+
+  const booksByCategory = categories.map(category => ({
+    category,
+    books: [...books.filter(book => book.category === category), ...wishlist.filter(book => book.category === category)],
+  }));
+
   return (
     <View style={styles.container}>
-      <Text style={styles.totalBooks}>{totalBooks} livre dans la collection</Text>
-      <View style={styles.boutoncontainer}>
-      <TouchableOpacity style={styles.button1} onPress={handleScanBook}>
-        <Ionicons name="scan-outline" size={24} color="black" />
-        <Text style={styles.buttonText}>Scanner</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button2} onPress={handleShareCollection}>
-        <Ionicons name="share-outline" size={24} color="black" />
-        <Text style={styles.buttonText}>Partager</Text>
-      </TouchableOpacity>
+      <Text style={styles.totalBooks}>{totalBooks} livre(s) dans la collection</Text>
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.button1} onPress={handleScanBook}>
+          <Ionicons name="scan-outline" size={24} color="black" />
+          <Text style={styles.buttonText}>Scanner</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button2} onPress={handleShareCollection}>
+          <Ionicons name="share-outline" size={24} color="black" />
+          <Text style={styles.buttonText}>Partager</Text>
+        </TouchableOpacity>
       </View>
       <FlatList
         data={booksByCategory}
@@ -62,6 +76,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     marginBottom: 10,
+    marginTop: 20,
   },
   listContainer: {
     paddingVertical: 20,
@@ -93,6 +108,11 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     borderRadius: 5,
   },
+  buttonContainer: {
+    flexDirection: "row",
+    padding: 10,
+    justifyContent: 'space-between',
+  },
   button1: {
     flexDirection: "row",
     alignItems: "center",
@@ -121,16 +141,6 @@ const styles = StyleSheet.create({
     color: "black",
     fontSize: 16,
     marginLeft: 5,
-  },
-  boutoncontainer: {
-    flexDirection: "row",
-    padding: 10,
-    justifyContent: 'space-between',
-  },
-  totalBooks: {
-    fontSize: 20,
-    fontWeight: "bold",
-    padding: 10,
   },
 });
 
