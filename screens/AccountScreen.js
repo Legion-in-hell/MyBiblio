@@ -76,39 +76,40 @@ const AccountScreen = () => {
           onPress={closePreferences}
           style={styles.backarrow}
         />
-        <Text style={styles.modalTitle}>Preferences</Text>
+        <Text style={styles.preferencesText}>Préférences</Text>
         </View>
         <View style={styles.modalContent}>
+        <Text style={styles.optionaffichage}>Général :</Text>
           <View style={styles.modalOptions}>
             <Text style={styles.modalOptionText}>Dark Mode</Text>
-            <Switch style={styles.switch} value={darkMode} onValueChange={toggleDarkMode} />
+            <Switch thumbColor="#0448ba" trackColor={{ false: "#767577", true: "#81b0ff" }} style={styles.switch} value={darkMode} onValueChange={toggleDarkMode} />
           </View>
 
-          <Text style={styles.optionaffichage}>Affichage des livres dans l'application :</Text>
+          <Text style={styles.optionaffichage}>Catégories à afficher :</Text>
 
           <View style={styles.modalOptions}>
             <Text style={styles.modalOptionText}>Roman</Text>
-            <Switch style={styles.switch} value={showRoman} onValueChange={toggleRoman} />
+            <Switch thumbColor="#0448ba" trackColor={{ false: "#767577", true: "#81b0ff" }} style={styles.switch} value={showRoman} onValueChange={toggleRoman} />
           </View>
 
           <View style={styles.modalOptions}>
             <Text style={styles.modalOptionText}>Policier</Text>
-            <Switch style={styles.switch} value={showPolicier} onValueChange={togglePolicier} />
+            <Switch thumbColor="#0448ba" trackColor={{ false: "#767577", true: "#81b0ff" }} style={styles.switch} value={showPolicier} onValueChange={togglePolicier} />
           </View>
 
           <View style={styles.modalOptions}>
             <Text style={styles.modalOptionText}>Bande dessinée</Text>
-            <Switch style={styles.switch} value={showBD} onValueChange={toggleBD} />
+            <Switch thumbColor="#0448ba" trackColor={{ false: "#767577", true: "#81b0ff" }} style={styles.switch} value={showBD} onValueChange={toggleBD} />
           </View>
 
           <View style={styles.modalOptions}>
             <Text style={styles.modalOptionText}>Mangas</Text>
-            <Switch style={styles.switch} value={showMangas} onValueChange={toggleMangas} />
+            <Switch thumbColor="#0448ba" trackColor={{ false: "#767577", true: "#81b0ff" }} style={styles.switch} value={showMangas} onValueChange={toggleMangas} />
           </View>
 
           <View style={styles.modalOptions}>
             <Text style={styles.modalOptionText}>Autres</Text>
-            <Switch style={styles.switch} value={showAutre} onValueChange={toggleAutre} />
+            <Switch thumbColor="#0448ba" trackColor={{ false: "#767577", true: "#81b0ff" }} style={styles.switch} value={showAutre} onValueChange={toggleAutre} />
           </View>
 
         </View>
@@ -164,33 +165,43 @@ const styles = StyleSheet.create({
     marginTop: 5,
     backgroundColor: 'red',
   },
-  modalContent: {
-    flex: 1,
-    backgroundColor: '#fff',
-    padding: 20,
-  },
-  modalTitle: {
-    fontSize: 24,
-    fontWeight: 'bold',
-  },
-  modalOptions: {
-    flexDirection: 'row',
-    alignSelf: 'flex-start',
-    alignItems: 'center',
-    marginBottom: 20,
-  },
-  modalOptionText: {
-    fontSize: 18,
-    marginRight: 10,
-  },
-  switch: {
-    alignSelf: 'flex-end',
-  },
-  backarrow: {
-    alignSelf: 'flex-start',
-  },
   headermodal: {
     flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+
+  modalContent: {
+    padding: 20,
+  },
+
+  switch: {
+    position: 'relative',
+  },
+
+  modalOptions: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 20,
+  },
+
+  modalOptionText: {
+    fontSize: 18,
+  },
+
+  preferencesText: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginRight: "30%",
+  },
+
+  optionaffichage: {
+    fontSize: 18,
+    marginTop: 20,
+    marginBottom: 30,
+    fontWeight: 'bold',
+    textDecorationLine: 'underline',
   },
 });
 
