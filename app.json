@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "MyBiblio",
-    "slug": "MyBiblio",
+    "slug": "mybiblio",
     "version": "0.2.0",
     "orientation": "portrait",
     "icon": "./assets/logo.png",
@@ -11,18 +11,28 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.legion57.mybiblio"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.legion57.mybiblio"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "9f1dda89-767f-4d95-9289-832b5765807a"
+      }
+    },
+    "owner": "legion57"
   }
 }
