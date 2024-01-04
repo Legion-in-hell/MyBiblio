@@ -57,16 +57,16 @@ const AccountScreen = () => {
       </View>
       <View style={styles.buttonSection}>
         <Button icon="cog-outline" mode="outlined" onPress={() => console.log("Settings Pressed")} style={styles.button}>
-          Settings
+          Paramètres
         </Button>
         <Button icon="tune" mode="outlined" onPress={openPreferences} style={[styles.button, styles.preferencesButton]}>
-          Preferences
+          Préférences
         </Button>
         <Button icon="lifebuoy" mode="outlined" onPress={() => console.log("Help & Support Pressed")} style={styles.button}>
-          Help & Support
+          Aide & Support
         </Button>
         <Button icon="logout" mode="contained" color="red" onPress={() => console.log("Logout Pressed")} style={styles.logoutButton}>
-          Logout
+          Déconnexion
         </Button>
       </View>
       <Modal visible={showPreferences} onRequestClose={closePreferences}>
