@@ -7,7 +7,6 @@ const CollectionScreen = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [books, setBooks] = useState([]);
   const [wishlist, setWishlist] = useState([]);
-  const [isScannerOpen, setScannerOpen] = useState(false);
 
   const categories = ['Roman', 'Manga', 'Policier', 'Bande dessinée', 'Autres'];
 
@@ -22,15 +21,7 @@ const CollectionScreen = () => {
     // Logic for sharing the collection (work in progress)
   };
 
-  const onBarCodeScanned = ({ type, data }) => {
-    setScannerOpen(false);
-    const book = book_data.find(book => book.ean === data);
-    if (book) {
-      setBooks(prevBooks => [...prevBooks, book]);
-    } else {
-      alert('Book not found');
-    }
-  };
+
 
   const booksByCategory = categories.map(category => ({
     category,
