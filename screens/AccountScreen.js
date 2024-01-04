@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, StyleSheet, Image, ScrollView, Modal } from "react-native";
 import { Button, Text, Switch } from 'react-native-paper';
-import { IconButton } from 'react-native-paper';
+import { IconButton, Card } from 'react-native-paper';
 
 const AccountScreen = () => {
   const [showPreferences, setShowPreferences] = useState(false);
@@ -54,6 +54,60 @@ const AccountScreen = () => {
         />
         <Text style={[styles.name, darkMode && styles.darkText]}>John Doe</Text>
         <Text style={[styles.email, darkMode && styles.darkText]}>john.doe@example.com</Text>
+      </View>
+      <View style={styles.cardsSection}>
+        <Card style={styles.card} onPress={() => console.log("Wishlist Pressed")}>
+          <Card.Title
+            title="Wishlist"
+            left={(props) => (
+              <IconButton
+                {...props}
+                icon="heart-outline"
+                size={30}
+                onPress={() => console.log("Wishlist Icon Pressed")}
+              />
+            )}
+          />
+        </Card>
+        <Card style={styles.card} onPress={() => console.log("Add Friend Pressed")}>
+          <Card.Title
+            title="Ajouter un ami"
+            left={(props) => (
+              <IconButton
+                {...props}
+                icon="account-plus-outline"
+                size={30}
+                onPress={() => console.log("Add Friend Icon Pressed")}
+              />
+            )}
+          />
+        </Card>
+        <Card style={styles.card} onPress={() => console.log("View Friends Pressed")}>
+          <Card.Title
+            title="Voir les amis"
+            left={(props) => (
+              <IconButton
+                {...props}
+                icon="account-group-outline"
+                size={30}
+                onPress={() => console.log("View Friends Icon Pressed")}
+              />
+            )}
+          />
+        </Card>
+        <Card style={styles.card} onPress={() => console.log("Share Account Pressed")}>
+          <Card.Title
+            title="Partager"
+            left={(props) => (
+              <IconButton
+                {...props}
+                icon="share-variant"
+                size={30}
+                onPress={() => console.log("Share Account Icon Pressed")}
+              />
+            )}
+          />
+        </Card>
       </View>
       <View style={styles.buttonSection}>
         <Button icon="cog-outline" mode="outlined" onPress={() => console.log("Settings Pressed")} style={styles.button}>
@@ -130,6 +184,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 20,
   },
+  cardsSection: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+  },
+  card: {
+    width: '48%',
+    margin: '1%',
+  },
   profileImage: {
     width: 120,
     height: 120,
@@ -149,7 +212,7 @@ const styles = StyleSheet.create({
     color: "#fff",
   },
   buttonSection: {
-    marginTop: '70%',
+    marginTop: '30%',
     width: '90%',
     alignSelf: 'center',
   },
