@@ -15,11 +15,11 @@ const CollectionScreen = () => {
   const totalBooks = books.length;
 
   const handleScanBook = () => {
-    // Logic for scanning a book
+    // Logic for scanning a book (work in progress)
   };
 
   const handleShareCollection = () => {
-    // Logic for sharing the collection
+    // Logic for sharing the collection (work in progress)
   };
 
   const onBarCodeScanned = ({ type, data }) => {
